@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorvete na Hora</title>
+    <style>
+        body {
+            background-color: lavender;
+            font-family: 'More Sugar', cursive;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkorchid;
+        }
+        .pedido {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorvete na Hora</h1>
+    <p>Faça seu pedido agora!</p>
+    <button onclick="mostrarPedido()">Enviar Pedido</button>
+    <div class="pedido" id="pedido">
+        <input type="text" placeholder="Digite seu pedido...">
+    </div>
+    
+    <script>
+        function mostrarPedido() {
+            document.getElementById("pedido").style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Luta 2D</title>
+  <style>
+    body {
+      background-color: #F9E79F; /* Amarelo claro */
+      font-family: 'AMBIGITY', sans-serif;
+    }
+    h1 {
+      font-family: 'Adorable', sans-serif;
+      color: #E74C3C; /* Vermelho */
+    }
+    .container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 50px;
+    }
+    .character {
+      width: 200px;
+      height: 200px;
+      background-color: #FFA07A; /* Laranja claro */
+      border: 2px solid #E74C3C; /* Vermelho */
+      text-align: center;
+      padding-top: 70px;
+      font-size: 24px;
+      color: #E74C3C; /* Vermelho */
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Jogo de Luta 2D</h1>
+
+<div class="container">
+  <div class="character" id="player1">Jogador 1</div>
+  <div class="character" id="player2">Jogador 2</div>
+</div>
+
+<script>
+  var player1Health = 100;
+  var player2Health = 100;
+  
+  document.getElementById('player1').addEventListener('click', function() {
+    player2Health -= Math.floor(Math.random() * 10) + 1;
+    if (player2Health <= 0) {
+      alert('Jogador 1 ganhou!');
+      resetGame();
+    }
+    else {
+      alert('Jogador 1 atacou! Saúde do Jogador 2: ' + player2Health);
+    }
+  });
+
+  document.getElementById('player2').addEventListener('click', function() {
+    player1Health -= Math.floor(Math.random() * 10) + 1;
+    if (player1Health <= 0) {
+      alert('Jogador 2 ganhou!');
+      resetGame();
+    }
+    else {
+      alert('Jogador 2 atacou! Saúde do Jogador 1: ' + player1Health);
+    }
+  });
+
+  function resetGame() {
+    player1Health = 100;
+    player2Health = 100;
+  }
+</script>
+
+</body>
+</html>
